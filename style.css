@@ -3,4 +3,46 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poiret One", sans-serif;
+    /* font-family: "Great Vibes", cursive; */
+    --indian-red: #E05B54ff;
+    --antiflash-white: #E8E7ECff;
+    --jet: #36333Eff;
+    --olive: #7A8731ff;
+    --linen: #F0E8DDff;
+    --c1: #F45D56;
+    --c2:#A3ABC0;
+    --c:#4B5A21;
+    --c4:#EEE2CC;
+    --c5:#89ABD1;
+}
+
+nav img
+{
+    width: 5rem;
+}
+
+nav .offcanvas-start
+{
+    background-color: #EEE2CC;
+}
+
+nav li
+{
+    color: #36333Eff;
+    font-weight: 500;
+}
+
+.travel-with-me a
+{
+    background-color: #7A8731ff;
+}
+
+@media (max-width:991px)
+{
+    nav .offcanvas-start
+    {
+        background-color: #89abd10c;
+        backdrop-filter: blur(20px);
+    }
 }
