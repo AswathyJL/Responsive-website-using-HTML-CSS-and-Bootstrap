@@ -144,10 +144,6 @@ nav .nav-link:hover
 }
 
 
-#home button
-{
-    opacity: 0.15;
-}
 
 /* country scroll */
 
@@ -291,7 +287,7 @@ nav .nav-link:hover
 #travel-blogs .section-head
 {
     text-align: center;
-    padding: 0px 0px 4rem 0px;
+    padding: 1rem 0px 1rem 0px;
     font-size: 3rem;
     font-weight: 600;
     color: #7A8731ff;
