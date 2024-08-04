@@ -60,11 +60,28 @@ nav .offcanvas-start
     color: #E8E7ECff;
     font-weight: 500;
 }
+.nav .nav-link
+{
+    transition: all 0.5s ease-in;
+}
 
 .travel-with-me a
 {
     background-color: #7A8731ff;
+    transition: background-color 0.5s;
 }
+
+.travel-with-me a:hover
+{
+    background-color: rgba(122, 135, 49, 0.87);
+    font-weight: 600;
+}
+
+nav .nav-link:hover
+{
+    opacity: 0.5;
+}
+
 
 /* home */
 
@@ -77,6 +94,7 @@ nav .offcanvas-start
 .c-item
 {
     height: 100vh;
+    position: relative;
 }
 
 .c-img
@@ -85,6 +103,46 @@ nav .offcanvas-start
     object-fit: cover;
     filter: brightness(0.6);
 }
+
+.c-item div
+{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    color: white;
+}
+
+.c-item h5
+{
+    font-size: 7rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 0.05rem;
+    line-height: 7.5rem;
+}
+
+.c-item span
+{
+    text-wrap: nowrap;
+    font-family: "Great Vibes", cursive;
+    font-weight: 500;
+}
+
+.c-item p
+{
+    font-size: 2rem;
+    width: 45%;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
 
 #home button
 {
@@ -199,6 +257,28 @@ nav .offcanvas-start
     animation-delay: calc(40s / 15 * (15 - 15) * -1);
 }
 
+.country span
+{
+    text-wrap: nowrap;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+}
+
+.country img:hover
+{
+    opacity: 0.5;
+}
+
+#country-scroll:hover .country {
+    animation-play-state: paused;
+}
+
+.country:hover span
+{
+    color: rgba(0, 0, 0, 0.777);
+}
+
 
 
 /* Travel blogs */
@@ -211,7 +291,7 @@ nav .offcanvas-start
 #travel-blogs .section-head
 {
     text-align: center;
-    padding: 4rem 0px 4rem 0px;
+    padding: 0px 0px 4rem 0px;
     font-size: 3rem;
     font-weight: 600;
     color: #7A8731ff;
@@ -221,9 +301,10 @@ nav .offcanvas-start
 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 7rem;
-    row-gap: 7rem;
+    column-gap: 5rem;
+    row-gap: 5rem;
     overflow: hidden;
+    padding: 1rem 1rem;
 }
 
 #travel-blogs .bgcard
@@ -236,6 +317,7 @@ nav .offcanvas-start
     transition: background-size 1s;
     transition:all 1s ease-in;
     border-radius: 0.1rem;
+    box-shadow: 3.5px 3.5px 9px 3.5px #d4d7df;
 }
 
 #travel-blogs .bg-card1
@@ -284,7 +366,6 @@ background-image: url(./images/stories/paris.jpg);
 }
 
 
-
 #travel-blogs .bgcard-body
 {
     position: absolute;
@@ -319,7 +400,6 @@ background-image: url(./images/stories/paris.jpg);
 {
     color: #ffffff;
     font-size: 2rem;
-    opacity: 1;
 }
 
 .bgcard-body a
@@ -425,6 +505,8 @@ background-image: url(./images/stories/paris.jpg);
           mask: var(--mask);
 
     background-color: rgba(122, 135, 49, 0.962);
+    width: 100%;
+    height: 100%;
 }
 
 .about-div h2
@@ -472,7 +554,7 @@ background-image: url(./images/stories/paris.jpg);
     text-align: justify;
     padding:0px 0px 1rem 0px;
 }
-.about-div a
+.know-more
 {
     text-decoration: none;
     color: white;
@@ -481,9 +563,10 @@ background-image: url(./images/stories/paris.jpg);
     background-color:#36333Eff ;
     border-radius: 2.5rem;
     transition: transform 1s;
+    text-wrap: nowrap;
 }
 
-.about-div a:hover
+.know-more:hover
 {
     transform: scale(1.15);
 }
@@ -585,6 +668,377 @@ background-image: url(./images/stories/paris.jpg);
       }
   }
 
+  /* packing guides */
+
+  @keyframes scrollLeft2 {
+    from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+#tips-scroll
+{
+    width: 100%;
+    height: 18rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-container
+{
+    display: flex;
+    height: 15rem;
+    animation: scrollLeft2 30s linear infinite;
+}
+
+.scroll-div
+{
+    height: 15rem;
+    width: 25rem;
+    margin: 0 1rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.scroll-div .tip-div {
+    flex: 50%;
+    height: 100%;
+}
+
+.scroll-div1
+{
+    --mask: 
+    linear-gradient(#000 0 0) center/calc(100% - 12px) calc(100% - 12px) no-repeat,
+    conic-gradient(from  135deg at top   ,#0000,#000 1deg 89deg,#0000 90deg) 0 0   /12px 6px space no-repeat,
+    conic-gradient(from  -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 0 100%/12px 6px space no-repeat,
+    conic-gradient(from   45deg at left  ,#0000,#000 1deg 89deg,#0000 90deg) 0 0   /6px 12px no-repeat space,
+    conic-gradient(from -135deg at right ,#0000,#000 1deg 89deg,#0000 90deg) 100% 0/6px 12px no-repeat space;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+          background-color: #F45D56;
+}
+
+.scroll-div1 .tip-div:nth-child(1)
+{
+    background-image: url(./images/packing-guides/packing-guides.png);
+    background-position: center;
+    background-size: cover;
+    aspect-ratio: 1;
+  --g:/23.606% 23.606% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
+  mask: 100% 50% var(--g),90.451% 79.389% var(--g),65.451% 97.553% var(--g),34.549% 97.553% var(--g),9.549% 79.389% var(--g),0% 50% var(--g),9.549% 20.611% var(--g),34.549% 2.447% var(--g),65.451% 2.447% var(--g),90.451% 20.611% var(--g),radial-gradient(100% 100%,#000 36.327%,#0000 calc(36.327% + 1px));
+}
+.scroll-div1 .tip-div:nth-child(2)
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 1rem;
+    overflow: visible;
+}
+
+.tip-div h4
+{
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.tip-div p
+{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.scroll-div1 p
+{
+    line-height: 1rem;
+}
+
+.scroll-div2
+{
+    --mask: 
+    linear-gradient(#000 0 0) 50%/calc(100% - 20px) calc(100% - 20px) no-repeat,
+    radial-gradient(10px,#0000 98%,#000) 0 -10px/18.5px 20px round no-repeat,
+    radial-gradient(10px,#0000 98%,#000) 0 calc(100% + 10px)/18.5px 20px round no-repeat,
+    radial-gradient(10px,#0000 98%,#000) -10px 0/20px 18.5px no-repeat round,
+    radial-gradient(10px,#0000 98%,#000) calc(100% + 10px) 0/20px 18.5px no-repeat round;
+  clip-path: polygon(20px 0,calc(100% - 20px) 0,100% 20px,100% calc(100% - 20px),calc(100% - 20px) 100%,20px 100%,0 calc(100% - 20px),0 20px);
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+    background-color:#7A8731ff;
+}
+
+.scroll-div2 .tip-div:nth-child(1)
+{
+    background-image: url(./images/packing-guides/travel-essentials.jpg);
+    background-position: center;
+    background-size: contain;
+    aspect-ratio: 1;
+    --g:/8.016% 8.016% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
+    mask: radial-gradient(100% 100%,#000 calc(45.817% - 1px),#0000 45.817%) intersect,radial-gradient(#000 0 0) exclude,100% 50% var(--g),99.24% 58.682% var(--g),96.985% 67.101% var(--g),93.301% 75% var(--g),88.302% 82.139% var(--g),82.139% 88.302% var(--g),75% 93.301% var(--g),67.101% 96.985% var(--g),58.682% 99.24% var(--g),50% 100% var(--g),41.318% 99.24% var(--g),32.899% 96.985% var(--g),25% 93.301% var(--g),17.861% 88.302% var(--g),11.698% 82.139% var(--g),6.699% 75% var(--g),3.015% 67.101% var(--g),0.76% 58.682% var(--g),0% 50% var(--g),0.76% 41.318% var(--g),3.015% 32.899% var(--g),6.699% 25% var(--g),11.698% 17.861% var(--g),17.861% 11.698% var(--g),25% 6.699% var(--g),32.899% 3.015% var(--g),41.318% 0.76% var(--g),50% 0% var(--g),58.682% 0.76% var(--g),67.101% 3.015% var(--g),75% 6.699% var(--g),82.139% 11.698% var(--g),88.302% 17.861% var(--g),93.301% 25% var(--g),96.985% 32.899% var(--g),99.24% 41.318% var(--g);
+}
+.scroll-div2 .tip-div:nth-child(2)
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 1rem;
+    overflow: visible;
+}
+
+.scroll-div2 h4
+{
+    color: black;
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+}
+
+.scroll-div2 p
+{
+    line-height: 1rem;
+}
+
+
+.scroll-div3
+{
+    --mask: 
+    linear-gradient(#000 0 0) 50%/calc(100% - 18.5px) calc(100% - 18.5px) no-repeat,
+    radial-gradient(farthest-side,#000 98%,#0000) 0 0/20px 20px round;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+    background-color:#36333Eff;
+}
+
+.scroll-div3 .tip-div:nth-child(1)
+{
+    background-image: url(./images/packing-guides/travel-plan.jpg);
+    background-position: center;
+    background-size: contain;
+    aspect-ratio: 1;
+  clip-path: polygon(100% 50%,78.98% 57.76%,93.3% 75%,71.21% 71.21%,75% 93.3%,57.76% 78.98%,50% 100%,42.24% 78.98%,25% 93.3%,28.79% 71.21%,6.7% 75%,21.02% 57.76%,0% 50%,21.02% 42.24%,6.7% 25%,28.79% 28.79%,25% 6.7%,42.24% 21.02%,50% 0%,57.76% 21.02%,75% 6.7%,71.21% 28.79%,93.3% 25%,78.98% 42.24%);
+}
+.scroll-div3 .tip-div:nth-child(2)
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 1.5rem;
+    overflow: visible;
+}
+
+.scroll-div3 h4
+{
+    color: #E8E7ECff;
+    font-size: 1.5rem;
+    line-height: 1.3rem;
+}
+
+.scroll-div3 p
+{
+    line-height: 1rem;
+    color:#eee2cca9;
+}
+
+.scroll-div3 a
+{
+    background-color: #7A8731ff;
+}
+
+.scroll-div4
+{
+    --mask: 
+    linear-gradient(#000 0 0) center/calc(100% - 24px) calc(100% - 24px) no-repeat,
+    conic-gradient(from  135deg at top   ,#0000,#000 1deg 89deg,#0000 90deg) 0 0   /24px 12px space no-repeat,
+    conic-gradient(from  -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 0 100%/24px 12px space no-repeat,
+    conic-gradient(from   45deg at left  ,#0000,#000 1deg 89deg,#0000 90deg) 0 0   /12px 24px no-repeat space,
+    conic-gradient(from -135deg at right ,#0000,#000 1deg 89deg,#0000 90deg) 100% 0/12px 24px no-repeat space;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+    background-color:#A3ABC0;
+}
+
+.scroll-div4 .tip-div:nth-child(2)
+{
+    background-image: url(./images/packing-guides/newsletter.png);
+    background-position: center;
+    background-size: cover;
+}
+.scroll-div4 .tip-div:nth-child(1)
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    padding: 1rem;
+    overflow: visible;
+}
+
+.scroll-div a:hover
+{
+    transform: scale(1.05);
+}
+
+#tips-scroll:hover .scroll-container
+{
+    animation-play-state: paused;
+}
+
+
+  /* footer */
+
+
+footer
+{
+    width: 100%;
+    background-color:#36333Eff;
+    padding: 3rem 0px;
+}
+
+.footer-subdiv
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-start;
+}
+
+.footer-div
+{
+    display: flex;
+    flex-direction: column;
+    flex: 25%;
+    align-items: center;
+}
+
+.main-footer-div
+{
+    justify-content: center;
+}
+
+.footer-div>img
+{
+    text-align: center;
+    margin-top: -3%;
+    width: 5rem;
+}
+
+.footer-div>h4
+{
+    font-size: 30px;
+    padding: 1rem 0px;
+    color: white;
+    font-size: 600;
+    text-wrap: nowrap;
+}
+
+.icon-collections
+{
+    width: 100%;
+    padding: 0px 10rem 1rem 10rem;
+}
+
+.icon
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon:hover
+{
+    background-color: #7A8731ff;
+}
+
+.brands
+{
+    color: white;
+}
+
+.icon:hover .brands
+{
+    color: #36333Eff;
+}
+
+.footer-div .know-more
+{
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #7A8731ff;
+    color: white;
+    transition: all 1s;
+}
+
+.footer-div .know-more:hover
+{
+    background-color: #7A8731ff;
+    transform: scale(1.1);
+    color: white;
+}
+
+.footer-div .modal
+{
+    color: white;
+}
+
+.footer-div .modal-content, .footer-div input
+{
+    background-color: #36333Eff;
+}
+
+.contact-us
+{
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 1%;
+}
+
+.footer-div li
+{
+    list-style: none;
+    margin-bottom:5%;
+    color:white;
+    font-size: 18px;
+}
+
+.footer-div .main
+{
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+}
+
+.footer-div>li>a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.footer-div>li>a:hover
+{
+    color: #4B5A21;
+}
+
+.footer-div>li>a>i
+{
+    margin-right: 0.5rem;
+}
+
 @media (max-width:1024px)
 {
     #travel-blogs .grid-container
@@ -597,7 +1051,7 @@ background-image: url(./images/stories/paris.jpg);
     /* about section */
     #about
     {
-        padding: 3rem 0px;
+        padding: 0px 0px;
     }
 
     .about-container
@@ -606,19 +1060,45 @@ background-image: url(./images/stories/paris.jpg);
         width: 100%;
     }
 
+    .about-div
+    {
+        flex: 100%;
+    }
+
     .about-div:nth-child(1)
     {
         --mask:
-        radial-gradient(9.65rem at 50% 13.25rem,#000 99%,#0000 101%) calc(50% - 10rem) 0/20rem 51% repeat-x,
-        radial-gradient(9.65rem at 50% -8.25rem,#0000 99%,#000 101%) 50% 5rem/20rem calc(51% - 5rem) repeat-x,
-        radial-gradient(9.65rem at 50% calc(100% - 13.25rem),#000 99%,#0000 101%) calc(50% - 10rem) 100%/20rem 51% repeat-x,
-        radial-gradient(9.65rem at 50% calc(100% + 8.25rem),#0000 99%,#000 101%) 50% calc(100% - 5rem)/20rem calc(51% - 5rem) repeat-x;
-        -webkit-mask: var(--mask);
-                mask: var(--mask);
-        padding: 10rem 0px;
+    radial-gradient(6.57rem at 50% 8.85rem,#000 99%,#0000 101%) calc(50% - 6rem) 0/12rem 51% repeat-x,
+    radial-gradient(6.57rem at 50% -5.85rem,#0000 99%,#000 101%) 50% 3rem/12rem calc(51% - 3rem) repeat-x,
+    radial-gradient(6.57rem at 50% calc(100% - 8.85rem),#000 99%,#0000 101%) calc(50% - 6rem) 100%/12rem 51% repeat-x,
+    radial-gradient(6.57rem at 50% calc(100% + 5.85rem),#0000 99%,#000 101%) 50% calc(100% - 3rem)/12rem calc(51% - 3rem) repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+    
+        padding: 5rem 0px;
         width: 100%;
         flex: 100%;
+        background-color: rgba(122, 135, 49, 0.962);
     }
+
+    /* footer */
+    .footer-subdiv
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer-div
+    {
+        flex: 50%;
+    }
+
+    .footer-div img
+    {
+        width: 7rem;
+    }
+
+    
 }
 @media (max-width:992px)
 {
@@ -628,12 +1108,21 @@ background-image: url(./images/stories/paris.jpg);
         backdrop-filter: blur(20px);
     }
 
-    
+    .c-item p
+    {
+        width: 50%;
+    }
 
 }
 
 @media (max-width:750px)
 {
+    .c-item h5
+    {
+        font-size: 5rem;
+        line-height: 5rem;
+    }
+
     #travel-blogs .grid-container
     {
         column-gap: 5rem;
@@ -650,5 +1139,38 @@ background-image: url(./images/stories/paris.jpg);
     {
         font-size: 1rem;
     }
+
+    /* footer */
+    .footer-subdiv
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .footer-div
+    {
+        width: 100%;
+        padding: 1rem 0px;
+    }
+    
+
 }
 
+@media (max-width:552px)
+{
+    .c-item h5
+    {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .c-item p
+{
+    font-size: 1.5rem;
+    width: 50%;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+}
