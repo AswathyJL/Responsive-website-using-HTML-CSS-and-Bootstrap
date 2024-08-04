@@ -14,4 +14,4 @@ Ava's Expeditions is a travel blog site where the author can share their travel 
 
 https://avas-expeditions.vercel.app
 
-![avas-expeditions](https://github.com/user-attachments/assets/57d87a70-6c45-4e4c-83aa-c4070fdab427)
+![avas-expeditions](https://github.com/user-attachments/assets/b208b796-5060-4de7-bec2-d1537132066b)
