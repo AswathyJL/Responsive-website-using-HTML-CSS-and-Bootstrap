@@ -1,6 +1,6 @@
 # Ava's Expeditions - Travel Blog | Responsive Static Landing Page
 
-Ava's Expeditions is a travel blog site where the author can share their travel stories and share tips and guides on travel. The responsive web page is built using
+Ava's Expeditions is a travel blog site where the author can share their travel stories and share tips and guides on travel. The responsive web page is built using html5, css3 and boostrap5.
 
 ## Tech Stack
 
